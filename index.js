@@ -15,8 +15,8 @@ const seq = new Sequelize("firstdb", "root", process.env.PASSWORD, {
 });
 
 // making schema.
-// todo:table you want to create.
-const todos = seq.define("todos", {
+// Notes table you want to create.
+const Notes = seq.define("Notes", {
   text: Sequelize.STRING,
   status: Sequelize.BOOLEAN,
 });
@@ -24,7 +24,7 @@ const todos = seq.define("todos", {
 // controller
 app.get("/", async (req, res) => {
   try {
-    const result = await todos.findAll();
+    const result = await Notes.findAll();
     res.status(200).json({ isError: false, result });
   } catch (err) {
     res.status(500).json({ message: "error while getting", isError: true });
@@ -32,10 +32,8 @@ app.get("/", async (req, res) => {
 });
 
 app.post("/", async (req, res) => {
-  console.log("I am in post");
   try {
-    const result = await todos.create(req.body);
-    console.log("RESult", result);
+    const result = await Notes.create(req.body);
     res.status(201).json({ isError: false, result });
   } catch (err) {
     res
@@ -46,7 +44,7 @@ app.post("/", async (req, res) => {
 
 app.delete("/:id", async (req, res) => {
   try {
-    const result = await todos.destroy({
+    const result = await Notes.destroy({
       where: {
         id: req.params.id,
       },
