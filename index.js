@@ -18,7 +18,6 @@ const seq = new Sequelize("firstdb", "root", process.env.PASSWORD, {
 // Notes table you want to create.
 const Notes = seq.define("Notes", {
   text: Sequelize.STRING,
-  status: Sequelize.BOOLEAN,
 });
 
 // controller
@@ -27,7 +26,7 @@ app.get("/", async (req, res) => {
     const result = await Notes.findAll();
     res.status(200).json({ isError: false, result });
   } catch (err) {
-    res.status(500).json({ message: "error while getting", isError: true });
+    res.status(500).json({ message: err.message, isError: true });
   }
 });
 
