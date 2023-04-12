@@ -23,13 +23,19 @@ The tech stack I used to build this App:-
 
 
 ## App flow :
-1. npm install
-2. npm start to run react app.
-3. You can able to read the blogs. But if you want to explore more about the website then follow the next step.
-4. Register yourself and then login with  credentials.
-5. After successfully login you can post your blog.
-6. After successfully login you can delete and edit your blog.
+1. cd mysql_todo_backend and npm install
+2. go to index.js file and enter your db name where you want to make this note table and enter your mysql password insted of process.env.password.
+3. for running the server write npm run server.
+4. go to the frontend folder.
+5. npm install
+6. cd note_frontend- and npm start.
+7. on the landing page you will get all notes.
+8. enter note for posting notes.
+9. click on delete icon for delete note.
 
 ## Contributor :
 1. Raju Kumar Prajapati.
+
+## Backend :
+https://github.com/Raju-16/MySQL_Todo_Backend
 
