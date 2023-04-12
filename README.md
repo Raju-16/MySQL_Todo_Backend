@@ -1,4 +1,4 @@
-# MySQL_Todo_Backend
+# MySQL_Backend
 
 ## Tech Stack :
 The tech stack I used to build this App:-
